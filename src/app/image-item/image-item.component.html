@@ -1,0 +1,30 @@
+<div #container
+     id="container">
+  <div id="item-container"
+       [ngStyle]="this.reverse ? {'flex-direction': 'row-reverse'} : {'flex-direction': 'row'}">
+    <div [ngStyle]="{'background-image': 'url(' + this.item.imageUrl + ')'}"
+         (click)="this.onClick()"
+         #mainItem
+         id="main-item">
+      <h1>{{this.item.title}}</h1>
+    </div>
+    <div *ngIf="this.displayingSubItems && this.item.subItems.length > 0"
+         id="sub-items">
+      <image-item *ngFor="let item of this.item.subItems"
+                  [item]="item" (emitContent)="this.onContentUpdate($event)">
+      </image-item>
+    </div>
+  </div>
+  <div *ngIf="this.displayingContent && this.item.subItems.length > 0"
+       #contentItem
+       id="content-item">
+    <div class="icon">
+      <mat-icon (click)="this.displayOrHideContent(false)">arrow_back</mat-icon>
+    </div>
+    <div class="text">
+      <h1>{{ this.content.title }}</h1>
+      <p>{{ this.content.text }}
+      </p>
+    </div>
+  </div>
+</div>

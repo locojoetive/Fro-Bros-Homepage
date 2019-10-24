@@ -1,0 +1,15 @@
+body {
+	background-color: black;
+}
+
+.text {
+	color: white;
+}
+
+.title {
+	font-size: 25px;
+}
+
+.container {
+	display: flex;
+}

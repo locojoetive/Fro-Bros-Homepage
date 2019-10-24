@@ -1,0 +1,43 @@
+.icon {
+  height: 30px;
+  width: 30px;
+  margin: 0 15px 0 15px;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+.icon-soundcloud {
+  mask: url(src/assets/images/icon-soundcloud.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-soundcloud:hover {
+  background: orange linear-gradient(orange, white);
+}
+
+.icon-instagram {
+  mask: url(src/assets/images/icon-instagram.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-instagram:hover {
+  background: blue linear-gradient(red, blue);
+}
+
+.icon-github {
+  mask: url(src/assets/images/icon-github.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-github:hover {
+  background: green linear-gradient(green, white);
+}
+
+.icon-facebook {
+  mask: url(src/assets/images/icon-facebook.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-facebook:hover {
+  background: blue linear-gradient(blue, white);
+}
