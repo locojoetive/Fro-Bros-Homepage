@@ -1,7 +1,6 @@
 export class Item {
   title: string;
   imageUrl: string;
-  itemHtmlElement: HTMLElement;
   subItems: Item[] = [];
   content: string;
   routerLink: string;
@@ -15,9 +14,6 @@ export class Item {
 
   addSubItems(items: Item[]): void {
     this.subItems = [...this.subItems, ...items];
-    this.subItems.forEach(item => {
-      console.log(item);
-    });
   }
 }
 

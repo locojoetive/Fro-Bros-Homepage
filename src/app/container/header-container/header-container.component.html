@@ -5,24 +5,33 @@
   <div *ngIf="!showMenu; else menu"
        class="header-items-wrapper">
     <header-item [item]="this.items[0]"
-                 [left]="true">
+                 [left]="true"
+                 [routerLink]="this.items[0].routerLink">
     </header-item>
     <header-item [item]="this.items[1]"
-                 [left]="true">
+                 [left]="true"
+                 [routerLink]="this.items[1].routerLink">
     </header-item>
     <header-item [item]="this.items[2]"
-                 [left]="false">
+                 [left]="false"
+                 [routerLink]="this.items[2].routerLink">
     </header-item>
     <header-item [item]="this.items[3]"
-                 [left]="false">
+                 [left]="false"
+                 [routerLink]="this.items[3].routerLink">
     </header-item>
     <header-item [item]="this.items[4]"
-                 [left]="false">
+                 [left]="false"
+                 [routerLink]="this.items[4].routerLink"
+                 [fragment]="'contacts'">
     </header-item>
   </div>
   <ng-template #menu>
     <div class="menu-wrapper">
-      <header-item [item]="this.items[2]" [left]="false"></header-item>
+      <header-item [item]="this.items[2]"
+                   [left]="false"
+                   [routerLink]="this.items[2].routerLink">
+      </header-item>
       <div class="menu-icon">
         <mat-icon *ngIf="!this.showContent; else close" (click)="this.onExpand()">menu</mat-icon>
         <ng-template #close>
@@ -36,16 +45,21 @@
        id="menu-items"
        (click)="this.onCollapse()">
     <header-item [item]="this.items[0]"
-                 [left]="true">
+                 [left]="true"
+                 [routerLink]="this.items[0].routerLink">
     </header-item>
     <header-item [item]="this.items[1]"
-                 [left]="true">
+                 [left]="true"
+                 [routerLink]="this.items[1].routerLink">
     </header-item>
     <header-item [item]="this.items[3]"
-                 [left]="false">
+                 [left]="false"
+                 [routerLink]="this.items[3].routerLink">
     </header-item>
     <header-item [item]="this.items[4]"
-                 [left]="false">
+                 [left]="false"
+                 [routerLink]="this.items[4].routerLink"
+                 [fragment]="'contacts'">
     </header-item>
   </div>
 </div>

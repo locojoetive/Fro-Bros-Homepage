@@ -17,7 +17,6 @@ export class PeopleContentComponent implements OnChanges {
 
   displayContent() {
     if (this.selectedPerson) {
-      console.log('people content ', this.selectedPerson);
       this.contentHtmlElement.nativeElement.style.height = '100%';
       this.contentHtmlElement.nativeElement.style.paddingTop = '75px';
       this.contentHtmlElement.nativeElement.style.visibility = 'visible';

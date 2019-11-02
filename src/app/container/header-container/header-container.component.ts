@@ -22,7 +22,7 @@ export class HeaderContainerComponent implements AfterViewInit {
     this.onResize();
   }
 
-  private setHeaderOpacity(): void {
+  public setHeaderOpacity(): void {
     const scrollOffset = window.scrollY - this.header.nativeElement.offsetHeight;
     const image = this.header.nativeElement.querySelector('#image');
     if (scrollOffset > 0) {

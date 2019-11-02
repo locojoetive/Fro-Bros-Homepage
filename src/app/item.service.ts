@@ -43,11 +43,11 @@ export class ItemService {
     }
     if (!ItemService.headerItems) {
       ItemService.headerItems = [
-        new HeaderItem('About Games'),
-        new HeaderItem('About Us'),
-        new HeaderItem(''),
-        new HeaderItem('Blog'),
-        new HeaderItem('Contact Us'),
+        new HeaderItem('About Games', '/home/games'),
+        new HeaderItem('About Us', '/home/people'),
+        new HeaderItem('', '/home'),
+        new HeaderItem('Blog', '/home/blog'),
+        new HeaderItem('Contact Us', '/home'),
       ];
     }
     console.log('item service executed');

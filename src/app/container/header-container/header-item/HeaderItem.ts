@@ -1,12 +1,9 @@
 export class HeaderItem {
   title: string;
-  relatedHtmlElement: HTMLElement;
+  routerLink: string;
 
-  constructor(title: string) {
+  constructor(title: string, routerLink: string) {
     this.title = title;
-  }
-
-  setRelatedHtmlElement(relatedHtmlElement: HTMLElement): void {
-    this.relatedHtmlElement = relatedHtmlElement;
+    this.routerLink = routerLink;
   }
 }

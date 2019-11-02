@@ -1,3 +1,8 @@
+:host {
+  width: 50%;
+  flex-grow: 1;
+}
+
 h1, p, mat-icon {
   color: white;
 }
@@ -6,8 +11,11 @@ h1, p, mat-icon {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .item-container {

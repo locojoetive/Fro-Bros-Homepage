@@ -17,7 +17,6 @@ export class GamesContentComponent implements  OnChanges {
 
   displayContent() {
     if (this.selectedGame) {
-      console.log('games content ', this.selectedGame);
       this.contentHtmlElement.nativeElement.style.height = '100%';
       this.contentHtmlElement.nativeElement.style.paddingTop = '75px';
       this.contentHtmlElement.nativeElement.style.visibility = 'visible';
