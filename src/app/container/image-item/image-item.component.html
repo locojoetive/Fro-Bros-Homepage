@@ -1,0 +1,18 @@
+<div [ngStyle]="this.reverse ? {'flex-direction': 'row-reverse'} : {'flex-direction': 'row'}"
+     class="item-container">
+  <div *ngIf="!displayingSubItems; else subItemsContainer"
+       [ngStyle]="{'background-image': 'url(' + this.item.imageUrl + ')'}"
+       [routerLink]="[this.item.routerLink]"
+       #mainItem
+       class="main-item">
+    <h1>{{this.item.title}}</h1>
+  </div>
+  <ng-template #subItemsContainer>
+    <div #subItems class="sub-items">
+      <image-sub-item *ngFor="let item of this.item.subItems"
+                      [item]="item"
+                      (selectedItem)="this.onItemUpdate($event)">
+      </image-sub-item>
+    </div>
+  </ng-template>
+</div>

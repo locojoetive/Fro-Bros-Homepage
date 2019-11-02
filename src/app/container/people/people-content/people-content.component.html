@@ -1,0 +1,12 @@
+<div #content>
+  <div *ngIf="this.selectedPerson"
+       class="content">
+    <div class="icon">
+      <mat-icon (click)="this.displayContent()">arrow_back</mat-icon>
+    </div>
+    <div class="text">
+      <h1>{{ this.selectedPerson.title }}</h1>
+      <p>{{ this.selectedPerson.content }}</p>
+    </div>
+  </div>
+</div>

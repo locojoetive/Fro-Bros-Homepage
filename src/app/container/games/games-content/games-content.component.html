@@ -1,0 +1,12 @@
+<div #content>
+  <div *ngIf="this.selectedGame"
+       class="content">
+    <div class="icon">
+      <mat-icon (click)="this.displayContent()">arrow_back</mat-icon>
+    </div>
+    <div class="text">
+      <h1>{{ this.selectedGame.title }}</h1>
+      <p>{{ this.selectedGame.content }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+mat-icon {
+  top: 75px;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 24px;
+  transform: scale(2);
+}
+
+.content {
+  height: 100%;
+  color: white;
+  display: flex;
+}
+
+.content-item {
+  padding-top: 0;
+}
+
+.content-item > div {
+  display: flex;
+  flex-direction: row;
+}
+
+

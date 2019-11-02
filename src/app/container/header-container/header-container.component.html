@@ -1,0 +1,51 @@
+<div (window:resize)="this.onResize()"
+     (window:scroll)="this.setHeaderOpacity()"
+     #header
+     class="header-wrapper">
+  <div *ngIf="!showMenu; else menu"
+       class="header-items-wrapper">
+    <header-item [item]="this.items[0]"
+                 [left]="true">
+    </header-item>
+    <header-item [item]="this.items[1]"
+                 [left]="true">
+    </header-item>
+    <header-item [item]="this.items[2]"
+                 [left]="false">
+    </header-item>
+    <header-item [item]="this.items[3]"
+                 [left]="false">
+    </header-item>
+    <header-item [item]="this.items[4]"
+                 [left]="false">
+    </header-item>
+  </div>
+  <ng-template #menu>
+    <div class="menu-wrapper">
+      <header-item [item]="this.items[2]" [left]="false"></header-item>
+      <div class="menu-icon">
+        <mat-icon *ngIf="!this.showContent; else close" (click)="this.onExpand()">menu</mat-icon>
+        <ng-template #close>
+          <mat-icon (click)="this.onCollapse()">close</mat-icon>
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+
+  <div *ngIf="this.showContent"
+       id="menu-items"
+       (click)="this.onCollapse()">
+    <header-item [item]="this.items[0]"
+                 [left]="true">
+    </header-item>
+    <header-item [item]="this.items[1]"
+                 [left]="true">
+    </header-item>
+    <header-item [item]="this.items[3]"
+                 [left]="false">
+    </header-item>
+    <header-item [item]="this.items[4]"
+                 [left]="false">
+    </header-item>
+  </div>
+</div>
