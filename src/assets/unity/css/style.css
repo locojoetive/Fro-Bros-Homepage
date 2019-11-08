@@ -2,11 +2,11 @@ body {
 	background-color: black;
 }
 
-.text {
-	color: white;
+.back-home {
+  fill: white;
 }
 
-.title {
+.controls {
 	font-size: 25px;
 }
 

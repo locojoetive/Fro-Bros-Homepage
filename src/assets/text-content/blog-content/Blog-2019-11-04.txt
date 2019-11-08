@@ -1,0 +1,7 @@
+Today I was working on our homepage's navigation. Our idea was to implement a new component per section. This allows more control of individual visual presentation. The navigation is now implemented by the usage of Angular's RouterModule, which let us determine where we currently are, and the Output (activate) of <router-outlet>, which gives is executed every time, the route is changed.
+
+Next I will implement a blog system, that reads all available documents contain blog-content. The content is saved by the name "Blog-YYYY-MM-DD.txt". The content of this file for example is called "Blog-2019-11-04.txt", since I created this file at this day. Next our ContentService will be extended in a way, that it will query the newest 10 documents having this form, to create SubItems for our Blog-Item.
+
+The Blog-item's subItems will be displayed in the ContentComponent. As soon as we have more than 10 entries, we will add a button to load older blog entries.
+
+I know this might sound confusing, but for now I am writing these things to encourage myself to write and describe. Therefore I am sure the 10th Blog entry will be more readable, and can maybe be associated to certain commits of this project.

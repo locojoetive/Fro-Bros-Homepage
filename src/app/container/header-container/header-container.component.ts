@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {HeaderItem} from './header-item/HeaderItem';
 import {ItemService} from '../../item.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'header-container',
@@ -13,8 +14,10 @@ export class HeaderContainerComponent implements AfterViewInit {
   showMenu = false;
   showContent = false;
 
-  constructor(private itemService: ItemService) {
-    this.items = itemService.mainHeaderItems();
+  constructor(
+    private router: Router
+  ) {
+    this.items = ItemService.mainHeaderItems();
   }
 
 
@@ -55,5 +58,17 @@ export class HeaderContainerComponent implements AfterViewInit {
 
   onCollapse(): void {
     this.showContent = false;
+  }
+
+  onScrollToComponent(componentName = ''): void {
+    if (componentName === 'contacts') {
+      setTimeout(() =>
+          document.getElementById('contact-wrapper').scrollIntoView({behavior: 'smooth'})
+        , 100);
+    } else {
+      setTimeout(() =>
+          document.body.scrollIntoView({behavior: 'smooth'})
+        , 100);
+    }
   }
 }

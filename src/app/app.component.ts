@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +18,16 @@ import {Component} from '@angular/core';
 export class AppComponent {
   displayHeader = false;
 
+  constructor(private router: Router) {
+  }
+
   onActivate(component: any) {
-    this.displayHeader = component.items || component.item;
-    console.log(component);
+    this.displayHeader = this.router.url.substr(0, 5) === '/home';
+    if (this.router.url === '/home#contacts') {
+      setTimeout(() =>
+          document.getElementById('contact-wrapper').scrollIntoView({behavior: 'smooth'})
+        , 100);
+    } else {
+    }
   }
 }

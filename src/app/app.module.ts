@@ -22,10 +22,8 @@ import {ImageItemComponent} from './container/image-item/image-item.component';
 import {GamesComponent} from './container/games/games.component';
 import {ImageSubItemComponent} from './container/image-item/image-sub-item/image-sub-item.component';
 import { HomeComponent } from './container/home/home.component';
-import { GamesContentComponent } from './container/games/games-content/games-content.component';
 import { PeopleComponent } from './container/people/people.component';
 import { BlogComponent } from './container/blog/blog.component';
-import { PeopleContentComponent } from './container/people/people-content/people-content.component';
 import { ContentComponent } from './content/content.component';
 
 
@@ -51,10 +49,8 @@ const modules = [
     ImageSubItemComponent,
     GamesComponent,
     HomeComponent,
-    GamesContentComponent,
     PeopleComponent,
     BlogComponent,
-    PeopleContentComponent,
     ContentComponent,
   ],
   imports: [

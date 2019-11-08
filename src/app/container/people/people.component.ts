@@ -18,7 +18,7 @@ export class PeopleComponent {
   selectedPerson: Item = null;
   item: Item;
 
-  constructor(private itemService: ItemService) {
-    this.item = this.itemService.people();
+  constructor() {
+    this.item = ItemService.people();
   }
 }

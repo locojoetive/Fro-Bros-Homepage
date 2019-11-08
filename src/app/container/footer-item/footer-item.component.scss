@@ -6,17 +6,13 @@ p, h2 {
   margin: 0 10px;
 }
 
-.contact-wrapper {
-  height: auto;
-  width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-}
-
 .left, .right {
   width: 50%;
+}
+
+.footer-wrapper {
+  color: white;
+  fill: white;
 }
 
 .right {

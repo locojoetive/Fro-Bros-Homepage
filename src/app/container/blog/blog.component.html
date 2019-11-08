@@ -1,2 +1,5 @@
-<image-item [item]="this.item" [displayingSubItems]="false"></image-item>
-<image-item [item]="this.item" [displayingSubItems]="true" (selectedItem)="this.selectedGame = $event"></image-item>
+<image-item [item]="this.item"
+            [displayingSubItems]="false"
+            (click)="this.displayContent = true">
+</image-item>
+<frobros-content [selectedItem]="this.item.subItems[0]"></frobros-content>

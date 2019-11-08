@@ -10,7 +10,7 @@ export class GamesComponent {
   selectedGame: Item = null;
   item: Item;
 
-  constructor(private itemService: ItemService) {
-    this.item = this.itemService.games();
+  constructor() {
+    this.item = ItemService.games();
   }
 }

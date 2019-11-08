@@ -10,6 +10,6 @@ import {ItemService} from '../../item.service';
 export class HomeComponent {
   items: Item[];
   constructor(private itemService: ItemService) {
-    this.items = this.itemService.mainItems();
+    this.items = ItemService.mainItems();
   }
 }

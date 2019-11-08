@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HeaderItem} from './container/header-container/header-item/HeaderItem';
-import {Item} from './container/Item';
+import {FroBrosContent, Item} from './container/Item';
 import {TextContentService} from './text-content.service';
 
 @Injectable({
@@ -29,18 +29,26 @@ export class ItemService {
         new Item('Herrnock', 'assets/images/Sub-Banner-1-0.png'),
       ]);
 
+      this.contentService.readBlogEntries().subscribe(blogEntry => {
+        const item = new Item('some-date', 'some/background/url');
+        item.content = this.formatToFroBrosContent('some title', blogEntry);
+        ItemService.items[2].addSubItems([item]);
+        console.log('too late?', item);
+      });
+
       // initialize text content for sub items
       ItemService.items.forEach(item => {
         if (item.subItems.length > 0) {
           item.subItems.map(subItem => {
             const title = subItem.title.replace(/\s/g, '');
             this.contentService.readContentFor(title).subscribe(text => {
-              subItem.content = text;
+              subItem.content = this.formatToFroBrosContent(subItem.title, text);
             });
           });
         }
       });
     }
+
     if (!ItemService.headerItems) {
       ItemService.headerItems = [
         new HeaderItem('About Games', '/home/games'),
@@ -50,26 +58,29 @@ export class ItemService {
         new HeaderItem('Contact Us', '/home'),
       ];
     }
-    console.log('item service executed');
   }
 
-  mainItems(): Item[] {
+  public static mainItems(): Item[] {
     return ItemService.items;
   }
 
-  mainHeaderItems(): HeaderItem[] {
+  public static mainHeaderItems(): HeaderItem[] {
     return ItemService.headerItems;
   }
 
-  games(): Item {
+  public static games(): Item {
     return ItemService.items[0];
   }
 
-  people(): Item {
+  public static people(): Item {
     return ItemService.items[1];
   }
 
-  blogEntries() {
+  public static blogEntries() {
     return ItemService.items[2];
+  }
+
+  private formatToFroBrosContent(title: string, text: string): FroBrosContent {
+    return new FroBrosContent(title, text);
   }
 }

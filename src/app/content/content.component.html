@@ -1,1 +1,14 @@
-<p>content works!</p>
+<div #content>
+  <div *ngIf="this.selectedItem && this.displayContent"
+       class="content">
+    <div class="icon">
+      <mat-icon (click)="this.displayContent()">arrow_back</mat-icon>
+    </div>
+    <div class="text-wrapper">
+      <h1>{{ this.selectedItem.title }}</h1>
+      <div class="paragraph" *ngFor="let paragraph of this.selectedItem.content.paragraphs">
+        <p>{{ paragraph }}</p>
+      </div>
+    </div>
+  </div>
+</div>

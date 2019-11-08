@@ -6,24 +6,29 @@
        class="header-items-wrapper">
     <header-item [item]="this.items[0]"
                  [left]="true"
-                 [routerLink]="this.items[0].routerLink">
+                 [routerLink]="this.items[0].routerLink"
+                 (click)="this.onScrollToComponent()">
     </header-item>
     <header-item [item]="this.items[1]"
                  [left]="true"
-                 [routerLink]="this.items[1].routerLink">
+                 [routerLink]="this.items[1].routerLink"
+                 (click)="this.onScrollToComponent()">
     </header-item>
     <header-item [item]="this.items[2]"
                  [left]="false"
-                 [routerLink]="this.items[2].routerLink">
+                 [routerLink]="this.items[2].routerLink"
+                 (click)="this.onScrollToComponent('home')">
     </header-item>
     <header-item [item]="this.items[3]"
                  [left]="false"
-                 [routerLink]="this.items[3].routerLink">
+                 [routerLink]="this.items[3].routerLink"
+                 (click)="this.onScrollToComponent()">
     </header-item>
     <header-item [item]="this.items[4]"
                  [left]="false"
                  [routerLink]="this.items[4].routerLink"
-                 [fragment]="'contacts'">
+                 [fragment]="'contacts'"
+                 (click)="this.onScrollToComponent('contacts')">
     </header-item>
   </div>
   <ng-template #menu>
