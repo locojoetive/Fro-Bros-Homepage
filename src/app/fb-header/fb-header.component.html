@@ -1,0 +1,33 @@
+<div class="header-container">
+  <p>[FRO_BROS_LOGO]</p>
+  <app-fb-header-item [active]="activeView == 0"
+                      [headerTitle]="'Games'"
+                      [buttonId]="0"
+                      [link]="'/games'"
+                      (propagateActiveButton)="onPropagateActiveView($event)">
+  </app-fb-header-item>
+  <app-fb-header-item [active]="activeView == 1"
+                      [headerTitle]="'About Us'"
+                      [buttonId]="1"
+                      [link]="'/people'"
+                      (propagateActiveButton)="onPropagateActiveView($event)">
+  </app-fb-header-item>
+  <app-fb-header-item [active]="activeView == 2"
+                      [headerTitle]="'Contact'"
+                      [buttonId]="2"
+                      [link]="'/contact'"
+                      (propagateActiveButton)="onPropagateActiveView($event)">
+  </app-fb-header-item>
+</div>
+
+<div class="social">
+  <a href="https://www.instagram.com/frobrosdev/">
+    <div class="icon icon-instagram"></div>
+  </a>
+  <a href="https://github.com/locojoetive">
+    <div class="icon icon-github"></div>
+  </a>
+  <a href="https://soundcloud.com/johnny-mike-3">
+    <div class="icon icon-soundcloud"></div>
+  </a>
+</div>

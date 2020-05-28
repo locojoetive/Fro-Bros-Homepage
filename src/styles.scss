@@ -1,0 +1,52 @@
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #252525;
+  color: aliceblue;
+}
+
+
+.icon {
+  height: 30px;
+  width: 30px;
+  margin: 0 15px 0 15px;
+  background-color: white;
+  background-repeat: no-repeat;
+}
+
+.icon-soundcloud {
+  mask: url(src/assets/icons/icon-soundcloud.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-soundcloud:hover {
+  background: orange linear-gradient(orange, white);
+}
+
+.icon-instagram {
+  mask: url(src/assets/icons/icon-instagram.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-instagram:hover {
+  background: blue linear-gradient(red, blue);
+}
+
+.icon-github {
+  mask: url(src/assets/icons/icon-github.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-github:hover {
+  background: green linear-gradient(green, white);
+}
+
+.icon-facebook {
+  mask: url(src/assets/icons/icon-facebook.svg);
+  mask-size: 100% 100%;
+}
+
+.icon-facebook:hover {
+  background: blue linear-gradient(blue, white);
+}
