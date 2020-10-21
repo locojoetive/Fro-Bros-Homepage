@@ -1,7 +1,21 @@
-.footer-wrapper {
-  padding: 1.5rem;
-  width: 75%;
-  margin: auto;
+.footer {
+  &-wrapper {
+    padding: 1.5rem;
+    width: 75%;
+    margin: auto;
+  }
+
+  &-copyrights {
+    display: none;
+    width: 100%;
+    background-color: black;
+    padding: 0.25rem 1rem;
+
+    &-container {
+      width: auto;
+      margin: auto;
+    }
+  }
 }
 
 div {
@@ -23,8 +37,7 @@ p {
 }
 
 .contact,
-.social
-{
+.social {
   display: flex;
   flex-direction: column;
   flex-basis: 45%;

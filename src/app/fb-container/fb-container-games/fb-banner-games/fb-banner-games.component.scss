@@ -26,10 +26,20 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  flex-direction: column;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+  }
+
+  &-container {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .banner-left, .banner-right {
-  width: 50%;
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
