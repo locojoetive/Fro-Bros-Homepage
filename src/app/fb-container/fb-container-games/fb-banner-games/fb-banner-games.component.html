@@ -2,19 +2,21 @@
   <div [style.background-image]="'url(assets/' + this.refName + '/0.png)'"
        #main
        class="banner">
-    <div class="banner-left">
-      <ng-content select="[header]"></ng-content>
-      <button mat-raised-button (click)="onOpenDetails(true)">Details</button>
-    </div>
-    <div class="banner-right">
-      <button mat-raised-button color="primary">Play</button>
-    </div>
-  </div>
-  <div #details
-       class="details">
-    <div *ngIf="this.opened" class="details">
-      <mat-icon (click)="onOpenDetails(false)">keyboard_arrow_up</mat-icon>
-      <ng-content select="[body]"></ng-content>
+    <div class="banner-container">
+      <div class="banner-left">
+        <ng-content select="[header]"></ng-content>
+        <button mat-raised-button (click)="onOpenDetails(true)">Details</button>
+      </div>
+      <div class="banner-right">
+        <button mat-raised-button color="primary">Play</button>
+      </div>
+      <div #details
+          class="details">
+        <div *ngIf="this.opened" class="details">
+          <mat-icon (click)="onOpenDetails(false)">keyboard_arrow_up</mat-icon>
+          <ng-content select="[body]"></ng-content>
+        </div>
+      </div>
     </div>
   </div>
 </div>
