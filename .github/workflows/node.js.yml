@@ -13,3 +13,4 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/ng-fro-bros
+          port: 22 
