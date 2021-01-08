@@ -12,4 +12,4 @@ jobs:
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: toupload
+          local-dir: ./dist/ng-fro-bros
