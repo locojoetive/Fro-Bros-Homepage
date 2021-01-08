@@ -1,17 +1,18 @@
-name: SFTP Deploy
-on:
-  push:
+on: [push]
+
 jobs:
-  ci:
+  deploy_job:
     runs-on: ubuntu-latest
+    name: deploy
     steps:
-      - uses: actions/checkout@v2
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/ng-fro-bros
-          server-dir: ./
-          port: 22 
+          username: 'www.frobros.de'
+          server: 'ssh.strato.de'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          local_path: './dist/ng-fro-bros/*'
+          remote_path: '/'
+          args: '-o ConnectTimeout=5'
