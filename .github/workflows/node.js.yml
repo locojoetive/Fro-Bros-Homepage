@@ -1,18 +1,18 @@
-on: [push]
-
+on: push
+name: Publish Website
 jobs:
-  deploy_job:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-    name: deploy
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
-        with:
-          username: 'www.frobros.de'
-          server: 'ssh.strato.de'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './dist/ng-fro-bros/*'
-          remote_path: '/'
-          args: '-o ConnectTimeout=5'
+    - uses: actions/checkout@master
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      env:
+        FTP_SERVER: ${{secrets.FTP_SERVER}}
+        FTP_USERNAME: ${{secrets.FTP_USERNAME}}
+        FTP_PASSWORD: ${{secrets.FTP_PASSWORD}}
+        PORT: 22
+        METHOD: sftp
+        REMOTE_DIR: ~/
+        ARGS: --verbose
