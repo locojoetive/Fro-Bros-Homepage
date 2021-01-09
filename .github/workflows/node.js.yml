@@ -1,9 +1,16 @@
-on: push
-name: Publish Website
+name: remote ssh command
+on: [push]
 jobs:
-  deploy:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: rsync deployments
-      run: curl --version
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
